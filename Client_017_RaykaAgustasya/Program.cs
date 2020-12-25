@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
+using System.Windows.Forms;
 
 namespace Client_017_RaykaAgustasya
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 }

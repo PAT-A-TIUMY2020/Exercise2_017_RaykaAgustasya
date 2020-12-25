@@ -5,30 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using Service_017_RaykaAgustasya;
 using System.ServiceModel;
+using System.Windows.Forms;
 
 
 namespace Server_017_RaykaAgustasya
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-            ServiceHost hostobjek = null;
-
-            try
-            {
-                hostobjek = new ServiceHost(typeof(TI_UMY));
-                hostobjek.Open();
-                Console.WriteLine("Server ready...");
-                Console.ReadLine();
-                hostobjek.Close();
-            }
-            catch (Exception ex)
-            {
-                hostobjek = null;
-                Console.WriteLine(ex.Message);
-                Console.ReadLine();
-            }
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 }
